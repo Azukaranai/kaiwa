@@ -1,0 +1,24 @@
+services:
+  # バックエンド（APIサーバー）の設定
+  - type: web
+    name: nexus-chat-server
+    env: node
+    root: server
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: PORT
+        value: 3001
+
+  # フロントエンド（画面）の設定
+  - type: static
+    name: nexus-chat-client
+    env: static
+    buildCommand: echo "No build step required"
+    staticPublishPath: ./
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

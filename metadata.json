@@ -1,0 +1,5 @@
+{
+  "name": "Nexus Chat AI",
+  "description": "A modern, aesthetic, client-side chat application integrating Google Gemini for real-time AI assistance and context-aware conversation analysis.",
+  "requestFramePermissions": []
+}
